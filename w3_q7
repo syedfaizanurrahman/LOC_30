@@ -1,0 +1,4 @@
+The size of a C structure is determined by the sum of the sizes of its individual members, with padding added for alignment purposes. The padding is added to ensure that the members of the structure are properly aligned in memory, which can improve performance by allowing the processor to access data more efficiently.
+The size of a C structure can be calculated using the sizeof operator
+example:
+printf("Size of student structure: %lu\n", sizeof(struct student));
