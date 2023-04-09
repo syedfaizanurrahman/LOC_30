@@ -1,0 +1,51 @@
+#include <stdio.h>
+
+#define MAX_SIZE 100
+
+void sort_array(int arr[], int len)
+{
+    int temp;
+
+    // Perform bubble sort
+    for (int i = 0; i < len - 1; i++)
+    {
+        for (int j = 0; j < len - i - 1; j++)
+        {
+            if (arr[j] > arr[j + 1])
+            {
+                temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+    }
+}
+
+int main()
+{
+    int my_array[MAX_SIZE];
+    int len;
+
+    // Get input for the array
+    printf("Enter the length of the array: ");
+    scanf("%d", &len);
+
+    printf("Enter the elements of the array:\n");
+    for (int i = 0; i < len; i++)
+    {
+        scanf("%d", &my_array[i]);
+    }
+
+    // Sort the array
+    sort_array(my_array, len);
+
+    // Print the sorted array
+    printf("Sorted array:\n");
+    for (int i = 0; i < len; i++)
+    {
+        printf("%d ", my_array[i]);
+    }
+    printf("\n");
+
+    return 0;
+}

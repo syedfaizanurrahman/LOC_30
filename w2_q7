@@ -1,0 +1,52 @@
+#include <stdio.h>
+#define MAX_SIZE 100
+
+int main()
+{
+    int arr[MAX_SIZE], temp[MAX_SIZE];
+    int n, j = 0;
+
+    // Get input for the array
+    printf("Enter the size of the array: ");
+    scanf("%d", &n);
+
+    printf("Enter the elements of the array:\n");
+    for (int i = 0; i < n; i++)
+    {
+        scanf("%d", &arr[i]);
+    }
+
+    // Move negative elements to one side of the array
+    for (int i = 0; i < n; i++)
+    {
+        if (arr[i] < 0)
+        {
+            temp[j] = arr[i];
+            j++;
+        }
+    }
+    for (int i = 0; i < n; i++)
+    {
+        if (arr[i] >= 0)
+        {
+            temp[j] = arr[i];
+            j++;
+        }
+    }
+
+    // Copy the sorted elements back into the original array
+    for (int i = 0; i < n; i++)
+    {
+        arr[i] = temp[i];
+    }
+
+    // Print the sorted array
+    printf("Sorted array:\n");
+    for (int i = 0; i < n; i++)
+    {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+
+    return 0;
+}
